@@ -1,11 +1,11 @@
 @font-face {
-  font-family: "Poppins";
-  src: url("./media/Font/Poppins/Poppins-Regular.ttf");
+  font-family: 'Poppins';
+  src: url('./media/Font/Poppins/Poppins-Regular.ttf');
   font-weight: normal;
 }
 @font-face {
-  font-family: "Poppins";
-  src: url("./media/Font/Poppins/Poppins-Bold.ttf");
+  font-family: 'Poppins';
+  src: url('./media/Font/Poppins/Poppins-Bold.ttf');
   font-weight: bold;
 }
 body,
@@ -17,7 +17,7 @@ h5,
 p,
 button,
 input {
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 /* Reset */
@@ -34,6 +34,7 @@ html {
 
 body {
   box-sizing: border-box;
+  position: relative;
 }
 .forum {
   width: 100vw;
@@ -164,8 +165,8 @@ input:focus {
   box-shadow: 0 0 2px 2px #5a73ff;
 }
 
-[type="radio"]:focus,
-[type="checkbox"]:focus {
+[type='radio']:focus,
+[type='checkbox']:focus {
   box-shadow: unset;
 }
 
@@ -214,11 +215,11 @@ button:focus {
   box-shadow: none;
 }
 
-input[type="file"]::file-selector-button,
+input[type='file']::file-selector-button,
 select {
   border: solid 2px rgb(78, 78, 78);
   font-size: 1.2rem;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-weight: bold;
   padding: 0.4em 0.8em;
   border-radius: 2px;
@@ -227,7 +228,7 @@ select {
   overflow-y: auto;
 }
 
-input[type="file"]::file-selector-button:hover {
+input[type='file']::file-selector-button:hover {
   background-color: rgb(78, 78, 78);
   color: #fff;
 }
@@ -389,11 +390,37 @@ div.card-os {
   margin: 0 0.4rem 0 1.6rem;
 }
 
+.select_user {
+  position: absolute;
+  top: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.select_user button {
+  width: 60%;
+  font-size: 1.5rem;
+  padding: 0;
+  margin: 0 auto;
+  margin-top: 1.5rem;
+}
+
+#change {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.user-found {
+  position: absolute;
+  left: 2rem;
+  color: #e75c5c;
+  font-size: 0.9rem;
+}
+
 @media screen and (max-width: 700px) {
   .container {
     box-shadow: none;
     max-width: none;
   }
-}
-@media screen and (max-width: 500px) {
 }
