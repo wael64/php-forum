@@ -95,7 +95,9 @@ if (isset($_POST["language"])) {
 
   // add the new user to the all users array in the first position to display him as the selected option in the select input
   array_unshift($fetchArr, ["first_name" => $_POST["prenom"], "last_name" => $_POST["nom"], "email" => $_POST["email"], "speciality" => $_POST["specialty"], "image_path" => 'media/{$_FILES["image"]["name"]}', "language_id" => $languageId[0]["id"], "os_id" => $osId[0]["id"]]);
-} else {
+}
+// Changed current user
+else {
   // query for the selected user
   $selectedQuery = "SELECT users.id, first_name, last_name, email, speciality, image_path, languages_id, os_id, created_at,php,java,c,c_plus, windows, linux, mac FROM users INNER JOIN languages ON users.languages_id = languages.id INNER JOIN os ON users.os_id = os.id WHERE users.id={$_POST['changed_id']} ;";
 
@@ -129,7 +131,7 @@ if (isset($_POST["language"])) {
   $_POST["language"] = $languageArr;
 
   // if value of OS equals 1 in the database, pass the OS name into the $_POST object and give it the value 1 (value doesn't matter)
-  (verifyInTable("windows", $selectedArr[0]["windows"]) === "windows") ? $_POST["windows"] = 1 : "";
+  (verifyInTable("windows", $selectedArr[0]["windows"]) === "windows") ? $_POST["wowinds"] = 1 : "";
   (verifyInTable("linux", $selectedArr[0]["linux"]) === "linux") ? $_POST["linux"] = 1 : "";
   (verifyInTable("mac", $selectedArr[0]["mac"]) === "mac") ? $_POST["macos"] = 1 : "";
 
